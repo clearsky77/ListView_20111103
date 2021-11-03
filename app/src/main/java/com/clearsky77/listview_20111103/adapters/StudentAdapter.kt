@@ -24,9 +24,16 @@ class StudentAdapter(
         val row = tempRow!!
         val data = mList[position]
 
-        val txtName = row.findViewById<TextView>(R.id.txtName)
+        val txtName = row.findViewById<TextView>(R.id.txtName) // 위치를 찾음
         val txtAge = row.findViewById<TextView>(R.id.txtAge)
         val txtAddress = row.findViewById<TextView>(R.id.txtAddress)
+
+        txtName.text = data.name
+        txtAge.text = data.birthYear.toString()
+        txtAddress.text = data.address
+
+        val age = 2021 - data.birthYear + 1
+        txtAge.text = "(${age}세)"
 
         return row
     }
