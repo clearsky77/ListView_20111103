@@ -6,11 +6,13 @@
     android:gravity="center_vertical"
     android:padding="15dp">
     <TextView
+        android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="학생이름"
         android:textSize="17sp"/>
     <TextView
+        android:id="@+id/txtAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -20,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
     <TextView
+        android:id="@+id/txtAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서울시 동대문구"/>
