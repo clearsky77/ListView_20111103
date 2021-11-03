@@ -20,5 +20,7 @@ class StudentAdapter(
         if(tempRow == null){
             tempRow == mInflater.inflate(R.layout.student_list_item,null) // xml을 끌어서 준비할 수 있게 해주세요.
         }
+        val row = tempRow!!
+        return row
     }
 }
