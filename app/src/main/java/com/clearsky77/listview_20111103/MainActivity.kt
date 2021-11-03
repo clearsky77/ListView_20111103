@@ -1,11 +1,13 @@
 package com.clearsky77.listview_20111103
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.clearsky77.listview_20111103.adapters.StudentAdapter
 import com.clearsky77.listview_20111103.datas.StudentData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -48,9 +50,15 @@ class MainActivity : AppCompatActivity() {
 //            Toast.makeText(this, "${longClickedStudent.name} 학생이 길게 눌림", Toast.LENGTH_SHORT).show()
 //            Boolean (true / false)을 결과로 지정 필수
 
-            mStudentAdapter.remove(longClickedStudent)
-            mStudentAdapter.notifyDataSetChanged()
-
+            val alert = AlertDialog.Builder(this)
+            alert.setTitle("학생 삭제 확인")
+            alert.setMessage("정말 ${longClickedStudent.name}학생을 제거하시겠습니까?")
+            alert.setPositiveButton("확인", DialogInterface.OnClickListener { dialogInterface, i ->
+                mStudentAdapter.remove(longClickedStudent)
+                mStudentAdapter.notifyDataSetChanged()
+            })
+            alert.setNegativeButton("취소",null)
+            alert.show()
 
             return@setOnItemLongClickListener true
         }
