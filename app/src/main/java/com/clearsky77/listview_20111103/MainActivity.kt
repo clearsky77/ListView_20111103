@@ -37,9 +37,10 @@ class MainActivity : AppCompatActivity() {
             val clickedStudent = mStudentList[position]
             //Toast.makeText(this, "${clickedStudent.name} 클릭됨", Toast.LENGTH_SHORT).show()
             var myIntent = Intent(this, ViewStudentDetailActivity::class.java)
-            myIntent.putExtra("name", clickedStudent.name)
-            myIntent.putExtra("birthYear", clickedStudent.birthYear)
-            myIntent.putExtra("address", clickedStudent.address)
+//            myIntent.putExtra("name", clickedStudent.name)
+//            myIntent.putExtra("birthYear", clickedStudent.birthYear)
+//            myIntent.putExtra("address", clickedStudent.address)
+            myIntent.putExtra("student", clickedStudent)
             startActivity(myIntent)
         }
 
