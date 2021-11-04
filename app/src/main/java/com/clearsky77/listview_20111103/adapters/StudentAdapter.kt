@@ -14,11 +14,11 @@ class StudentAdapter(
     val resId: Int,
     val mList: ArrayList<StudentData>) : ArrayAdapter<StudentData>(mContext, resId, mList){
                                                          // 생성할 때 받는 것을 부모 클래스에 보내준다.
-        val mInflater = LayoutInflater.from(mContext)
+    val mInflater = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var tempRow = convertView
-        if(tempRow == null){
+        if(tempRow == null){ // 재사용할 뷰가 없으면 (아직 화면 만큼의 뷰가 없으므로 = 뷰가 모자라므로)
             tempRow = mInflater.inflate(resId,null) // xml을 끌어서 준비할 수 있게 해주세요.
         }
         val row = tempRow!!
